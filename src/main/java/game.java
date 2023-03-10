@@ -1,11 +1,14 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class game {
+
+public class game { // game class
     public static void main(String[] args) {
 
         // Create a Scanner object to read input from System.in
         Scanner scanner = new Scanner(System.in);
+
+        // Create a Random object
         System.out.println("Enter the number of rounds you want to play: ");
         int rounds = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < rounds; i++) {
@@ -13,14 +16,15 @@ public class game {
         }
 
     }
-        static void play (Scanner scanner)
-        { // play the game
+        // Create a method called play that accepts a Scanner object as a parameter.
+        static void play (Scanner scanner) { // play the game
         System.out.println("Enter Rock, Paper or Scissors: ");
         String input = scanner.nextLine();
 
         Random random = new Random();
         int randomNumber = random.nextInt(3);
 
+        // computerchoices
         String computerChoice = "";
         if (randomNumber == 0) {
             computerChoice = "Rock";
@@ -31,6 +35,7 @@ public class game {
         }
         System.out.println("Computer chose: " + computerChoice);
 
+        // compare the user's choice with the computer's choice
         if (input.equals(computerChoice)) {
             System.out.println("Tie!");
         } else if (input.equals("Paper") && computerChoice.equals("Rock")) {
